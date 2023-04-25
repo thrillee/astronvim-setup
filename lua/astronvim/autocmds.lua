@@ -123,7 +123,7 @@ autocmd("BufEnter", {
         -- If any visible windows are not sidebars, early return
         if not sidebar_fts[filetype] then
           return
-        -- If the visible window is a sidebar
+          -- If the visible window is a sidebar
         else
           -- only count filetypes once, so remove a found sidebar from the detection
           sidebar_fts[filetype] = nil

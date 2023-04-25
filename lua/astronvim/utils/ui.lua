@@ -102,7 +102,7 @@ end
 
 --- Toggle showtabline=2|0
 function M.toggle_tabline()
-  vim.opt.showtabline = vim.opt.showtabline:get() == 0 and 2 or 0
+  vim.opt.showtabline = vim.opt.showtabline:get() == 0 and 1 or 0
   ui_notify(string.format("tabline %s", bool2str(vim.opt.showtabline:get() == 2)))
 end
 

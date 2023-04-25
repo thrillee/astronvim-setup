@@ -236,7 +236,8 @@ function M.init.breadcrumbs(opts)
       if i > start_idx then
         local child = {
           { provider = string.gsub(d.name, "%%", "%%%%"):gsub("%s*->%s*", "") }, -- add symbol name
-          on_click = { -- add on click function
+          on_click = {
+            -- add on click function
             minwid = M.utils.encode_pos(d.lnum, d.col, self.winnr),
             callback = function(_, minwid)
               local lnum, col, winnr = M.utils.decode_pos(minwid)
@@ -1533,14 +1534,17 @@ M.heirline.make_buflist = function(component)
           right = "tabline_bg",
         }
       end,
-      { -- bufferlist
+      {
+        -- bufferlist
         init = function(self) self.tab_type = M.heirline.tab_type(self) end,
-        on_click = { -- add clickable component to each buffer
+        on_click = {
+          -- add clickable component to each buffer
           callback = function(_, minwid) vim.api.nvim_win_set_buf(0, minwid) end,
           minwid = function(self) return self.bufnr end,
           name = "heirline_tabline_buffer_callback",
         },
-        { -- add buffer picker functionality to each buffer
+        {
+          -- add buffer picker functionality to each buffer
           condition = function(self) return self._show_picker end,
           update = false,
           init = function(self)

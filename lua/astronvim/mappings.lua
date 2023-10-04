@@ -77,7 +77,7 @@ maps.n["[b"] = {
 
 maps.n["gt"] =
 { function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next buffer" }
-maps.n["gT"] = {
+maps.n["gp"] = {
   function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
   desc = "Previous buffer",
 }
